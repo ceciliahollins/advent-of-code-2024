@@ -33,7 +33,7 @@ public class Tests: XCTestCase {
     }
     
     func testPartTwo() {
-        let expected = 0
+        let expected = 22014209
         let actual = historianHysteriaPartTwo(input)
         
         XCTAssertEqual(expected, actual)
