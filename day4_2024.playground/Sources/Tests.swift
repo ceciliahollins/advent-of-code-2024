@@ -22,24 +22,24 @@ public class Tests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-//    func testPartOne() {
-//        let expected = 0
-//        let actual = ceresSearch(input)
-//        
-//        XCTAssertEqual(expected, actual)
-//    }
-//    
-//    func testPartTwoExample() {
-//        let expected = 0
-//        let actual = ceresSearchPartTwo(exampleInput)
-//        
-//        XCTAssertEqual(expected, actual)
-//    }
-//    
-//    func testPartTwo() {
-//        let expected = 0
-//        let actual = ceresSearchPartTwo(input)
-//        
-//        XCTAssertEqual(expected, actual)
-//    }
+    func testPartOne() {
+        let expected = 2662
+        let actual = ceresSearch(input)
+
+        XCTAssertEqual(expected, actual)
+    }
+
+    func testPartTwoExample() {
+        let expected = 9
+        let actual = ceresSearchPartTwo(exampleInput)
+
+        XCTAssertEqual(expected, actual)
+    }
+
+    func testPartTwo() {
+        let expected = 2034
+        let actual = ceresSearchPartTwo(input)
+
+        XCTAssertEqual(expected, actual)
+    }
 }
