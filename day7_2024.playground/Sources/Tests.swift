@@ -35,7 +35,7 @@ public class Tests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
 
-    // Part 2 takes around 47 seconds to complete, this could definitely be improved if needed
+    // Part 2 takes around 40 seconds to complete, this could definitely be improved if needed
     func testPartTwo() {
         let expected = 162042343638683
         let actual = bridgeRepairPartTwo(input)

@@ -43,7 +43,7 @@ public func bridgeRepairPartTwo(_ input: String) -> Int {
     
     for equation in equations {
         let operationsTree = TreeNode(value: "+\(equation.value.first ?? 0)")
-        constructTree(operationsTree, children: Array(equation.value.dropFirst()))
+        constructTree(operationsTree, children: Array(equation.value.dropFirst()), isPartTwo: true)
         
         if depthFirstCalculation(operationsTree, currVal: 0, finalVal: equation.key) {
             result += equation.key
@@ -109,7 +109,8 @@ func depthFirstCalculation(_ node: TreeNode<String>, currVal: Int, finalVal: Int
         for child in node.children {
             // If any child returns true, there is a possible expression to get the final result
             // We can quit early and return true
-            if depthFirstCalculation(child, currVal: expressionResult, finalVal: finalVal) {
+            if currVal <= finalVal,
+               depthFirstCalculation(child, currVal: expressionResult, finalVal: finalVal) {
                 return true
             }
         }
