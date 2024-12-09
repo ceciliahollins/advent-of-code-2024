@@ -3,7 +3,7 @@ struct Map {
     var guardPos: (x: Int, y: Int) = (0, 0)
     var guardDirection: Direction = .up
     
-    mutating func move() -> (x: Int, y: Int) {
+    func move() -> (x: Int, y: Int) {
         var next = guardPos
         switch guardDirection {
         case .up:
@@ -55,7 +55,7 @@ struct Position: Hashable {
     }
 }
 
-struct PositionTwo: Hashable {
+struct PositionDirection: Hashable {
     var x: Int
     var y: Int
     var dir: Direction
