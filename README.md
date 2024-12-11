@@ -1,7 +1,7 @@
 # advent-of-code-2024
 My solutions for Advent of Code 2024
 
-Current stars: 18
+Current stars: 20
 
 Goals for this year:
 - Get more stars than 2023 before 2025 Advent of Code
