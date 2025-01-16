@@ -56,11 +56,11 @@ public class Tests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
 
-//    func testPartTwoExample() {
-//        let expectedOne = 80
-//        let actualOne = gardenGroupsPartTwo(exampleInputOne)
-//        XCTAssertEqual(expectedOne, actualOne)
-//        
+    func testPartTwoExample() {
+        let expectedOne = 80
+        let actualOne = gardenGroupsPartTwo(exampleInputOne)
+        XCTAssertEqual(expectedOne, actualOne)
+        
 //        let expectedTwo = 1206
 //        let actualTwo = gardenGroupsPartTwo(exampleInputTwo)
 //        XCTAssertEqual(expectedTwo, actualTwo)
@@ -72,7 +72,7 @@ public class Tests: XCTestCase {
 //        let expectedFour = 368
 //        let actualFour = gardenGroupsPartTwo(exampleInputFour)
 //        XCTAssertEqual(expectedFour, actualFour)
-//    }
+    }
 
 //    func testPartTwo() {
 //        let expected = 0
