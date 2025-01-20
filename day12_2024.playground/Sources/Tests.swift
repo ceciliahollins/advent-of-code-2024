@@ -39,6 +39,39 @@ public class Tests: XCTestCase {
                            AAAAAA
                            """
     
+    let exampleInputFive = """
+                           AAAEAAAAAA
+                           FFAEAADAAA
+                           FFAAAADACA
+                           FFAABAAAAB
+                           FFABBBABBB
+                           FAAAABBBBB
+                           FAGGABBBBB
+                           FAGAABBBBB
+                           """
+    
+    let exampleInputSix = """
+                          LDDDDDDXXX
+                          LLLDDVDXXX
+                          LLLDDDXXXX
+                          """
+    
+    let exampleInputSeven = """
+                            BBBBBC
+                            BAAABC
+                            BABABC
+                            BAABBB
+                            BABABC
+                            BAAABC
+                            """
+    
+    let exampleInputEight = """
+                            AAAAA
+                            ABABA
+                            ABBBA
+                            ABABA
+                            """
+    
     func testPartOneExample() {
         let expectedOne = 140
         let actualOne = gardenGroups(exampleInputOne)
@@ -61,23 +94,39 @@ public class Tests: XCTestCase {
         let actualOne = gardenGroupsPartTwo(exampleInputOne)
         XCTAssertEqual(expectedOne, actualOne)
         
-//        let expectedTwo = 1206
-//        let actualTwo = gardenGroupsPartTwo(exampleInputTwo)
-//        XCTAssertEqual(expectedTwo, actualTwo)
-//        
-//        let expectedThree = 236
-//        let actualThree = gardenGroupsPartTwo(exampleInputThree)
-//        XCTAssertEqual(expectedThree, actualThree)
-//        
-//        let expectedFour = 368
-//        let actualFour = gardenGroupsPartTwo(exampleInputFour)
-//        XCTAssertEqual(expectedFour, actualFour)
+        let expectedTwo = 1206
+        let actualTwo = gardenGroupsPartTwo(exampleInputTwo)
+        XCTAssertEqual(expectedTwo, actualTwo)
+        
+        let expectedThree = 236
+        let actualThree = gardenGroupsPartTwo(exampleInputThree)
+        XCTAssertEqual(expectedThree, actualThree)
+        
+        let expectedFour = 368
+        let actualFour = gardenGroupsPartTwo(exampleInputFour)
+        XCTAssertEqual(expectedFour, actualFour)
+        
+        let expectedFive = 1992
+        let actualFive = gardenGroupsPartTwo(exampleInputFive)
+        XCTAssertEqual(expectedFive, actualFive)
+        
+        let expectedSix = 250
+        let actualSix = gardenGroupsPartTwo(exampleInputSix)
+        XCTAssertEqual(expectedSix, actualSix)
+        
+        let expectedSeven = 492
+        let actualSeven = gardenGroupsPartTwo(exampleInputSeven)
+        XCTAssertEqual(expectedSeven, actualSeven)
+        
+        let expectedEight = 232
+        let actualEight = gardenGroupsPartTwo(exampleInputEight)
+        XCTAssertEqual(expectedEight, actualEight)
     }
 
-//    func testPartTwo() {
-//        let expected = 0
-//        let actual = gardenGroupsPartTwo(input)
-//
-//        XCTAssertEqual(expected, actual)
-//    }
+    func testPartTwo() {
+        let expected = 0
+        let actual = gardenGroupsPartTwo(input)
+
+        XCTAssertEqual(expected, actual)
+    }
 }

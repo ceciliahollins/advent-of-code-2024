@@ -46,6 +46,8 @@ public func gardenGroupsPartTwo(_ input: String) -> Int {
                 
                 // Call the recursive function to get the area and perimeter
                 let plotCalc = plots.fencingCalculationPartTwo(for: Pos(x, y))
+                let sidesCalc = plots.sideCalculation(plotCalc.s)
+                result += plotCalc.a * sidesCalc
             }
             
             x += 1
@@ -133,6 +135,76 @@ extension [[String]] {
         }
         
         return result
+    }
+    
+    func sideCalculation(_ sides: [(Pos, Pos)]) -> Int {
+        
+        var sides = sides
+        var numOfSides: Int = 0
+        
+        sides.sort { $0.0.y < $1.0.y }
+        sides.sort { $0.0.y == $1.0.y && $0.0.x < $1.0.x }
+        
+        var currSide = sides[0]
+        sides.removeFirst()
+        
+        // Iterate the array of side pairs
+        while !sides.isEmpty {
+            
+            // Remove all the values that are on the same side as the current side
+            var i = 0
+            while i < sides.count {
+                
+                // Traverse up or down
+                if currSide.0.x != currSide.1.x {
+                  
+                    // Check that the side being checked is the expected position directly below or above the current side
+                    if (currSide.0.down == sides[i].0 && currSide.1.down == sides[i].1) // The next point is below
+                        || (currSide.0.up == sides[i].0 && currSide.1.up == sides[i].1) { // The next point is above
+                        
+                        // The next position has been found, remove it and continue checking for the next side
+                        currSide = sides[i]
+                        sides.remove(at: i)
+                        // Start the search over again
+                        i = 0
+                    } else {
+                        // Still looking for the next position, go to the next
+                        i += 1
+                    }
+                    
+                // Traverse left or right
+                } else {
+                    
+                    // Check that the side being checked is the expected position directly to the right or left of the current side
+                    if (currSide.0.right == sides[i].0 && currSide.1.right == sides[i].1) // The next point is to the right
+                        || (currSide.0.left == sides[i].0 && currSide.1.left == sides[i].1) { // The next point is to the left
+                        
+                        // The next position has been found, remove it and continue checking for the next side
+                        currSide = sides[i]
+                        sides.remove(at: i)
+                        // Start the search over again
+                        i = 0
+                    } else {
+                        // Still looking for the next position, go to the next
+                        i += 1
+                    }
+                }
+            }
+            
+            // We are finished finding all the values on the current side, add one and find the next side
+            numOfSides += 1
+            if let first = sides.first {
+                currSide = first
+                sides.removeFirst()
+                
+                // If that was the last value in the side list, add one for the final side
+                if sides.isEmpty {
+                    numOfSides += 1
+                }
+            }
+        }
+        
+        return numOfSides
     }
     
     // A debugging function to print the garden
