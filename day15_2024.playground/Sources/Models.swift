@@ -40,12 +40,15 @@ struct WarehousePartTwo {
     let moves: [Dir]
     
     // A debug function to print the warehouse
-    // Update the size of the array to the input size manually, I couldn't be bothered to make this dynamic
     func printWarehouse() {
-        for row in map {
+        for (y, row) in map.enumerated() {
             var line = ""
-            for char in row {
-                line.append(char)
+            for (x, char) in row.enumerated() {
+                if x == robot.x && y == robot.y {
+                    line.append("@")
+                } else {
+                    line.append(char)
+                }
             }
             print(line)
         }
