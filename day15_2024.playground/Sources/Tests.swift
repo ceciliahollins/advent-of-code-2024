@@ -71,16 +71,16 @@ public class Tests: XCTestCase {
     }
     
     func testPartTwoExample() {
-        let expected = 618
-        let actual = warehouseWoesPartTwo(exampleInputOnePartTwo)
+        let expected = 9021
+        let actual = warehouseWoesPartTwo(exampleInputTwo)
         
         XCTAssertEqual(expected, actual)
     }
     
-//    func testPartTwo() {
-//        let expected = 0
-//        let actual = warehouseWoesPartTwo(input)
-//        
-//        XCTAssertEqual(expected, actual)
-//    }
+    func testPartTwo() {
+        let expected = 1412866
+        let actual = warehouseWoesPartTwo(input)
+        
+        XCTAssertEqual(expected, actual)
+    }
 }

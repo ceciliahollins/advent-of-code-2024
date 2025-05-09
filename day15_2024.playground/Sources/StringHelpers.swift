@@ -57,7 +57,7 @@ extension String {
                 } else if char == "O" {
                     map[map.count - 1].append(contentsOf: ["[", "]"])
                 } else if char == "@" {
-                    robot = Pos(x, y)
+                    robot = Pos(map[map.count - 1].count, map.count - 1)
                     map[map.count - 1].append(contentsOf: [".", "."])
                 } else {
                     map[map.count - 1].append(contentsOf: [".", "."])
