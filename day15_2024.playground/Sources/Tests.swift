@@ -15,6 +15,18 @@ public class Tests: XCTestCase {
                            <^^>>>vv<v>>v<<
                            """
     
+    let exampleInputOnePartTwo =  """
+                                  #######
+                                  #...#.#
+                                  #.....#
+                                  #..OO@#
+                                  #..O..#
+                                  #.....#
+                                  #######
+
+                                  <vv<<^^<<^^
+                                  """
+    
     let exampleInputTwo =  """
                            ##########
                            #..O..O.O#
@@ -58,13 +70,13 @@ public class Tests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
-//    func testPartTwoExample() {
-//        let expected = 0
-//        let actual = warehouseWoesPartTwo(exampleInput)
-//        
-//        XCTAssertEqual(expected, actual)
-//    }
-//    
+    func testPartTwoExample() {
+        let expected = 618
+        let actual = warehouseWoesPartTwo(exampleInputOnePartTwo)
+        
+        XCTAssertEqual(expected, actual)
+    }
+    
 //    func testPartTwo() {
 //        let expected = 0
 //        let actual = warehouseWoesPartTwo(input)

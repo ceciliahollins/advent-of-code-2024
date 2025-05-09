@@ -8,17 +8,17 @@ public func warehouseWoes(_ input: String) -> Int {
     for dir in w.moves {
                 
         // Set up for the next spot to move to
-        var nextOpenSpot = w.robot.nextMove(dir)
+        var openSpot = w.robot.nextMove(dir)
         var openSpotFound = false
         // Continue moving until an open floor spot is found
         // If the next spot is a wall or an open spot is found- stop moving
-        while !w.walls.contains(nextOpenSpot), !openSpotFound {
+        while !w.walls.contains(openSpot), !openSpotFound {
             // If the box positions does not contain the current spot, an open spot is found
             // Otherwise try the next spot
-            if !w.boxes.contains(nextOpenSpot) {
+            if !w.boxes.contains(openSpot) {
                 openSpotFound = true
             } else {
-                nextOpenSpot = nextOpenSpot.nextMove(dir)
+                openSpot = openSpot.nextMove(dir)
             }
         }
                 
@@ -33,7 +33,7 @@ public func warehouseWoes(_ input: String) -> Int {
                 // Remove the box at the spot the robot is sitting at
                 w.boxes.remove(nextRobotSpot)
                 // Insert a box at the open spot
-                w.boxes.insert(nextOpenSpot)
+                w.boxes.insert(openSpot)
                 // This process is the same as pushing all the boxes in the way of the robot
             }
         }
@@ -49,6 +49,9 @@ public func warehouseWoes(_ input: String) -> Int {
 }
 
 public func warehouseWoesPartTwo(_ input: String) -> Int {
+    
+    let w: WarehousePartTwo = input.inputToWarehousePartTwo()
+    w.printWarehouse()
     
     return 0
 }
